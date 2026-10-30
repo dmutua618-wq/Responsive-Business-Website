@@ -1,0 +1,673 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1264d8;
+    --secondary-color: #10243e;
+    --accent-color: #eaf2ff;
+    --text-color: #253247;
+    --light-text: #64748b;
+    --white: #ffffff;
+    --background: #f8fafc;
+    --border-color: #e2e8f0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    background: var(--white);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* 2. Reusable Container */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 85px 0;
+}
+
+/* 3. Header and Navigation */
+
+.header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav a {
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: var(--primary-color);
+}
+
+/* 4. Hero Section */
+
+.hero {
+    background: linear-gradient(
+        120deg,
+        #f8fbff,
+        #eaf2ff
+    );
+
+    padding: 90px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.eyebrow {
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.15;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--primary-color);
+}
+
+.hero-description {
+    color: var(--light-text);
+    font-size: 17px;
+    max-width: 550px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    flex: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 20px 45px rgba(16, 36, 62, 0.15);
+}
+
+/* 5. Buttons */
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: #0d4eaa;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--accent-color);
+}
+
+.btn-light {
+    background: var(--white);
+    color: var(--primary-color);
+}
+
+.btn-light:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* 6. Section Headings */
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.section-heading h2 {
+    color: var(--secondary-color);
+    font-size: 34px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    color: var(--light-text);
+}
+
+/* 7. About Section */
+
+.about {
+    background: var(--white);
+}
+
+.about-description {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--light-text);
+    font-size: 17px;
+}
+
+/* 8. Services Section */
+
+.services-preview {
+    background: var(--background);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 35px 28px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 35px rgba(16, 36, 62, 0.09);
+}
+
+.service-icon {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.service-card p {
+    color: var(--light-text);
+    font-size: 15px;
+}
+
+.center-button {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* 9. Call to Action */
+
+.cta {
+    background: var(--secondary-color);
+    padding: 75px 20px;
+    text-align: center;
+    color: var(--white);
+}
+
+.cta h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.cta p {
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+/* 10. Footer */
+
+.footer {
+    background: #0b192b;
+    color: var(--white);
+    padding: 55px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    color: var(--white);
+}
+
+.footer-content p {
+    color: #aab8ca;
+    margin-top: 12px;
+}
+
+.footer-content h3 {
+    margin-bottom: 15px;
+}
+
+.footer-content ul li {
+    margin-bottom: 9px;
+    color: #aab8ca;
+}
+
+.footer-content ul a:hover {
+    color: var(--white);
+}
+
+.footer-bottom {
+    border-top: 1px solid #334155;
+    padding-top: 20px;
+    text-align: center;
+    color: #aab8ca;
+    font-size: 14px;
+}
+
+/* 11. Tablet Responsiveness */
+
+@media (max-width: 900px) {
+
+    .hero-content {
+        gap: 35px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* 12. Mobile Responsiveness */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 0;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav ul {
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav a {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 55px 0;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        padding: 28px 22px;
+    }
+
+    .cta h2 {
+        font-size: 27px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+}
+
+/* =====================================
+   SERVICES PAGE STYLES
+===================================== */
+
+/* Page Banner */
+
+.page-banner {
+    background: linear-gradient(120deg, #f8fbff, #eaf2ff);
+    padding: 85px 0;
+    text-align: center;
+}
+
+.page-banner h1 {
+    color: var(--secondary-color);
+    font-size: clamp(35px, 5vw, 48px);
+    margin-bottom: 15px;
+}
+
+.page-banner p:not(.eyebrow) {
+    color: var(--light-text);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Why Choose Us */
+
+.why-us {
+    background: var(--background);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.benefit-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.benefit-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.benefit-card p {
+    color: var(--light-text);
+    font-size: 15px;
+}
+
+/* Responsive Services Page */
+
+@media (max-width: 900px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .page-banner {
+        padding: 60px 0;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================
+   CONTACT PAGE STYLES
+===================================== */
+
+.contact-section {
+    background: var(--background);
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Contact Form */
+
+.contact-form-section {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 25px rgba(16, 36, 62, 0.04);
+}
+
+.contact-form-section h2,
+.contact-info h2 {
+    color: var(--secondary-color);
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.form-intro {
+    color: var(--light-text);
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--secondary-color);
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text-color);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(18, 100, 216, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-form-section button {
+    border: none;
+    cursor: pointer;
+}
+
+/* Form Feedback */
+
+#formMessage {
+    margin-top: 18px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+#formMessage.success {
+    color: #15803d;
+}
+
+#formMessage.error {
+    color: #dc2626;
+}
+
+/* Contact Information */
+
+.contact-info {
+    background: var(--secondary-color);
+    color: var(--white);
+    padding: 35px;
+    border-radius: 12px;
+}
+
+.contact-info h2 {
+    color: var(--white);
+}
+
+.contact-info > p {
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #334b68;
+}
+
+.contact-item:last-child {
+    border-bottom: none;
+}
+
+.contact-item h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.contact-item p {
+    color: #cbd5e1;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+/* Responsive Contact Page */
+
+@media (max-width: 900px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-form-section,
+    .contact-info {
+        padding: 25px 20px;
+    }
+
+    .contact-form-section h2,
+    .contact-info h2 {
+        font-size: 23px;
+    }
+}
